@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Enrollment Form</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Student Enrollment Form</h1>
+            <form id="enrollmentForm">
+                <div class="form-group">
+                    <label for="studentId">Student ID:</label>
+                    <input type="text" class="form-control" id="studentId">
+                </div>
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" class="form-control" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="class">Class:</label>
+                    <input type="text" class="form-control" id="class" required>
+                </div>
+                <div class="form-group">
+                    <label for="birthDate">Birth Date:</label>
+                    <input type="date" class="form-control" id="birthDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" class="form-control" id="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="enrollmentDate">Enrollment Date:</label>
+                    <input type="date" class="form-control" id="enrollmentDate" required>
+                </div>
+                <button type="button" class="btn btn-primary" id="saveButton" disabled>Save</button>
+                <button type="button" class="btn btn-primary" id="updateButton" disabled>Update</button>
+                <button type="button" class="btn btn-secondary" id="resetButton" disabled>Reset</button>
+            </form>
+        </div>
+
+        <!-- Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script>
+            // Set the initial state of the form
+            function setInitialState() {
+                document.getElementById('saveButton').disabled = false;
+                document.getElementById('updateButton').disabled = true;
+                document.getElementById('resetButton').disabled = false;
+                document.getElementById('fullName').disabled = false;
+                document.getElementById('class').disabled = false;
+                document.getElementById('birthDate').disabled = false;
+                document.getElementById('address').disabled = false;
+                document.getElementById('enrollmentDate').disabled = false;
+                document.getElementById('fullName').value = '';
+                document.getElementById('class').value = '';
+                document.getElementById('birthDate').value = '';
+                document.getElementById('address').value = '';
+                document.getElementById('enrollmentDate').value = '';
+                document.getElementById('studentId').value = ' ';
+            }
+
+            // Enable the update mode with existing data
+            function enableUpdateMode(data) {
+                document.getElementById('saveButton').disabled = true;
+                document.getElementById('updateButton').disabled = false;
+                document.getElementById('resetButton').disabled = false;
+                document.getElementById('fullName').disabled = false;
+                document.getElementById('class').disabled = false;
+                document.getElementById('birthDate').disabled = false;
+                document.getElementById('address').disabled = false;
+                document.getElementById('enrollmentDate').disabled = false;
+                document.getElementById('fullName').value = data.fullName;
+                document.getElementById('class').value = data.class;
+                document.getElementById('birthDate').value = data.birthDate;
+                document.getElementById('address').value = data.address;
+                document.getElementById('enrollmentDate').value = data.enrollmentDate;
+                document.getElementById('studentId').focus();
+            }
+
+            // Save the data to the database
+            function saveData() {
+                var studentId = document.getElementById('studentId').value;
+                var fullName = document.getElementById('fullName').value;
+                var className = document.getElementById('class').value;
+                var birthDate = document.getElementById('birthDate').value;
+                var address = document.getElementById('address').value;
+                var enrollmentDate = document.getElementById('enrollmentDate').value;
+
+
+                // Perform validation here (e.g., check for empty fields)
+
+                // Simulate storing data in the database
+                // Replace this with your actual code to interact with the database
+                console.log('Data saved to the database:');
+                console.log('Student ID:', studentId);
+                console.log('Full Name:', fullName);
+                console.log('Class:', className);
+                console.log('Birth Date:', birthDate);
+                console.log('Address:', address);
+                console.log('Enrollment Date:', enrollmentDate);
+
+                // Reset the form
+                setInitialState();
+            }
+
+            // Update the data in the database
+            function updateData() {
+                var studentId = document.getElementById('studentId').value;
+                var fullName = document.getElementById('fullName').value;
+                var className = document.getElementById('class').value;
+                var birthDate = document.getElementById('birthDate').value;
+                var address = document.getElementById('address').value;
+                var enrollmentDate = document.getElementById('enrollmentDate').value;
+
+
+                // Perform validation here (e.g., check for empty fields)
+
+                // Simulate updating data in the database
+                // Replace this with your actual code to interact with the database
+                console.log('Data updated in the database:');
+                console.log('Student ID:', studentId);
+                console.log('Full Name:', fullName);
+                console.log('Class:', className);
+                console.log('Birth Date:', birthDate);
+                console.log('Address:', address);
+                console.log('Enrollment Date:', enrollmentDate);
+
+                // Reset the form
+                setInitialState();
+            }
+
+            // Reset the form
+            function resetForm() {
+                setInitialState();
+            }
+
+            // On page load
+            window.onload = function () {
+                setInitialState();
+            };
+
+            // Attach event listeners to the buttons
+            document.getElementById('saveButton').addEventListener('click', saveData);
+            document.getElementById('updateButton').addEventListener('click', updateData);
+            document.getElementById('resetButton').addEventListener('click', resetForm);
+        </script>
+    </body>
+</html>
