@@ -20,4 +20,4 @@ JsonPowerDB offers several benefits as a database solution:
 Schema-free: JsonPowerDB is schema-free, which means you don't need to define a fixed structure or schema for your data. You can store and retrieve JSON documents as they are, without the need for pre-defined tables or columns. This flexibility allows for easy data modeling and adaptability to changing requirements.
 ACID Compliant: JsonPowerDB provides ACID (Atomicity, Consistency, Isolation, Durability) compliance for data integrity and reliability. It ensures that data transactions are processed reliably and consistently, even in the presence of concurrent operations or system failures.
 Real-time Capabilities: JsonPowerDB supports real-time data synchronization and replication across multiple nodes and devices. It enables real-time data updates, making it suitable for applications that require live data streaming, collaboration, or real-time analytics.
-# Release History (release of your JsonPowerDB related code on Github):
+
